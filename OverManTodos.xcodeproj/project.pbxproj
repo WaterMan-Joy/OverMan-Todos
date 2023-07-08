@@ -13,6 +13,9 @@
 		A87D57A02A56577600ABDB34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D579F2A56577600ABDB34 /* ContentView.swift */; };
 		A87D57A22A56577800ABDB34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D57A12A56577800ABDB34 /* Assets.xcassets */; };
 		A87D57A62A56577800ABDB34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D57A52A56577800ABDB34 /* Preview Assets.xcassets */; };
+		A87D57B82A57DA7D00ABDB34 /* HideKeyBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57B72A57DA7D00ABDB34 /* HideKeyBoardExtension.swift */; };
+		A87D57BA2A57E0E600ABDB34 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57B92A57E0E600ABDB34 /* Constant.swift */; };
+		A87D57BC2A5812EC00ABDB34 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		A87D57A12A56577800ABDB34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A87D57A32A56577800ABDB34 /* OverManTodos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OverManTodos.entitlements; sourceTree = "<group>"; };
 		A87D57A52A56577800ABDB34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A87D57B72A57DA7D00ABDB34 /* HideKeyBoardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyBoardExtension.swift; sourceTree = "<group>"; };
+		A87D57B92A57E0E600ABDB34 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		A87D57AD2A56673B00ABDB34 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A87D57B72A57DA7D00ABDB34 /* HideKeyBoardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -95,6 +102,7 @@
 		A87D57AE2A56674A00ABDB34 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A87D57B92A57E0E600ABDB34 /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				A87D579F2A56577600ABDB34 /* ContentView.swift */,
+				A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,10 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A87D57B82A57DA7D00ABDB34 /* HideKeyBoardExtension.swift in Sources */,
 				A87D57992A56577600ABDB34 /* OverManTodosApp.swift in Sources */,
 				A87D579B2A56577600ABDB34 /* Persistence.swift in Sources */,
 				A87D57A02A56577600ABDB34 /* ContentView.swift in Sources */,
 				A87D579E2A56577600ABDB34 /* OverManTodos.xcdatamodeld in Sources */,
+				A87D57BC2A5812EC00ABDB34 /* BackgroundImageView.swift in Sources */,
+				A87D57BA2A57E0E600ABDB34 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
