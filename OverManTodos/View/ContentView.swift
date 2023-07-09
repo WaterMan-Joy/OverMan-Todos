@@ -10,10 +10,10 @@ import CoreData
 
 struct ContentView: View {
     
+
     @State var task: String = ""
-    private var isButtonDisabled: Bool {
-        task.isEmpty
-    }
+    @State private var showNewTaskItem: Bool = false
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -57,51 +57,93 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack {
-                    // new task and button
-                    VStack(spacing: 16, content: {
-                        TextField("NEW TASK", text: $task)
-                            .padding()
-                            .background(Color(UIColor.systemGray6))
-                            .cornerRadius(10)
-                        Button(action: {
-                            print("save click")
-                            addItem()
-                        }, label: {
-                            Spacer()
-                            Text("SAVE")
-                            Spacer()
-                        })
-                        .disabled(isButtonDisabled)
-                        .padding()
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .background(isButtonDisabled ? Color.gray : Color.pink)
-                        .cornerRadius(10)
-                        
-                        // task list
-                        List {
-                            ForEach(items) { item in
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text("\(item.task ?? "")")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                    Text("\(item.timestamp!, formatter: itemFormatter)")
-                                        .font(.footnote)
-                                    .foregroundColor(.gray)
-                                }
-                            }
-                            .onDelete(perform: deleteItems)
-                        }
-                        .opacity(0.9)
-                        .cornerRadius(10)
-                        .frame(maxWidth: 640)
-                    }) //: VSTACK
-                    .padding()
+                
+                // main view
+                VStack(spacing: 20) {
                     
+                    // header
+                    HStack {
+                        // title
+                        Text("OverMan Tasks")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(.leading, 4)
+                        Spacer()
+                        // edit button
+                        EditButton()
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .padding(.horizontal, 10)
+                            .frame(minWidth: 70, minHeight: 24)
+                            .background(Capsule().stroke(Color.white, lineWidth: 2))
+                        // apppearance button
+                        Button(action: {
+                            isDarkMode.toggle()
+                        }, label: {
+                            Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .font(.system(.title, design: .rounded))
+                        })
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    
+                    Spacer(minLength: 80)
+                    
+                    // new task button
+                    Button(action: {
+                        showNewTaskItem = true
+                    }, label: {
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 30, weight: .semibold, design: .rounded))
+                        Text("New Task")
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                    })
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.pink, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                    .cornerRadius(10)
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0.0, y: 4.0)
+                    
+                    Spacer()
+                    
+                    // task list
+                    List {
+                        ForEach(items) { item in
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text("\(item.task ?? "")")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("\(item.timestamp!, formatter: itemFormatter)")
+                                    .font(.footnote)
+                                .foregroundColor(.gray)
+                            }
+                            .cornerRadius(10)
+                        }
+                        .onDelete(perform: deleteItems)
+                    }
+                    .opacity(0.9)
+                    .listStyle(PlainListStyle())
+                    .cornerRadius(10)
+                    .frame(maxWidth: 640)
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                // new tasks item
+                if showNewTaskItem {
+                    BlankView()
+                        .onTapGesture() {
+                            withAnimation() {
+                                showNewTaskItem = false
+                            }
+                        }
+                    NewTaskItemView(isShowing: $showNewTaskItem)
                 }
             }
             .navigationBarTitle("OVERMAN TASKS", displayMode: .large)
+            .navigationBarHidden(true)
             .toolbar {
                 #if os(iOS)
                 ToolbarItem(placement: .navigationBarTrailing) {

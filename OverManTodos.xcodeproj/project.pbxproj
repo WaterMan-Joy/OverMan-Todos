@@ -16,6 +16,8 @@
 		A87D57B82A57DA7D00ABDB34 /* HideKeyBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57B72A57DA7D00ABDB34 /* HideKeyBoardExtension.swift */; };
 		A87D57BA2A57E0E600ABDB34 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57B92A57E0E600ABDB34 /* Constant.swift */; };
 		A87D57BC2A5812EC00ABDB34 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */; };
+		A87D57BE2A581A6600ABDB34 /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57BD2A581A6600ABDB34 /* NewTaskItemView.swift */; };
+		A87D57C02A5A161300ABDB34 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57BF2A5A161300ABDB34 /* BlankView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,9 @@
 		A87D57B72A57DA7D00ABDB34 /* HideKeyBoardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyBoardExtension.swift; sourceTree = "<group>"; };
 		A87D57B92A57E0E600ABDB34 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
+		A87D57BD2A581A6600ABDB34 /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
+		A87D57BF2A5A161300ABDB34 /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
+		A8E1909C2A5A1FDD004DA9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 		A87D57972A56577600ABDB34 /* OverManTodos */ = {
 			isa = PBXGroup;
 			children = (
+				A8E1909C2A5A1FDD004DA9C3 /* Info.plist */,
 				A87D57982A56577600ABDB34 /* OverManTodosApp.swift */,
 				A87D57B12A5667BB00ABDB34 /* View */,
 				A87D57AF2A56675500ABDB34 /* Style */,
@@ -118,7 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				A87D579F2A56577600ABDB34 /* ContentView.swift */,
+				A87D57BD2A581A6600ABDB34 /* NewTaskItemView.swift */,
 				A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */,
+				A87D57BF2A5A161300ABDB34 /* BlankView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,9 +214,11 @@
 				A87D57992A56577600ABDB34 /* OverManTodosApp.swift in Sources */,
 				A87D579B2A56577600ABDB34 /* Persistence.swift in Sources */,
 				A87D57A02A56577600ABDB34 /* ContentView.swift in Sources */,
+				A87D57C02A5A161300ABDB34 /* BlankView.swift in Sources */,
 				A87D579E2A56577600ABDB34 /* OverManTodos.xcdatamodeld in Sources */,
 				A87D57BC2A5812EC00ABDB34 /* BackgroundImageView.swift in Sources */,
 				A87D57BA2A57E0E600ABDB34 /* Constant.swift in Sources */,
+				A87D57BE2A581A6600ABDB34 /* NewTaskItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +275,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "O 할일 앱";
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -317,6 +330,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "O 할일 앱";
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -337,12 +353,17 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OverManTodos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "O 할일 앱";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = NO;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -375,12 +396,17 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OverManTodos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "O 할일 앱";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = NO;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
