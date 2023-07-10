@@ -64,7 +64,7 @@ struct ContentView: View {
                     // header
                     HStack {
                         // title
-                        Text("OverMan Tasks")
+                        Text("Over Tasks")
                             .font(.system(.largeTitle, design: .rounded))
                             .fontWeight(.heavy)
                             .padding(.leading, 4)
@@ -110,15 +110,7 @@ struct ContentView: View {
                     // task list
                     List {
                         ForEach(items) { item in
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text("\(item.task ?? "")")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("\(item.timestamp!, formatter: itemFormatter)")
-                                    .font(.footnote)
-                                .foregroundColor(.gray)
-                            }
-                            .cornerRadius(10)
+                            ListRowItemView(item: item)
                         }
                         .onDelete(perform: deleteItems)
                     }

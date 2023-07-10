@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A86DECB32A5BFBA200CC117C /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DECB22A5BFBA200CC117C /* ListRowItemView.swift */; };
 		A87D57992A56577600ABDB34 /* OverManTodosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57982A56577600ABDB34 /* OverManTodosApp.swift */; };
 		A87D579B2A56577600ABDB34 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D579A2A56577600ABDB34 /* Persistence.swift */; };
 		A87D579E2A56577600ABDB34 /* OverManTodos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A87D579C2A56577600ABDB34 /* OverManTodos.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A86DECB22A5BFBA200CC117C /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
 		A87D57952A56577600ABDB34 /* OverManTodos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OverManTodos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D57982A56577600ABDB34 /* OverManTodosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverManTodosApp.swift; sourceTree = "<group>"; };
 		A87D579A2A56577600ABDB34 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				A87D579F2A56577600ABDB34 /* ContentView.swift */,
 				A87D57BD2A581A6600ABDB34 /* NewTaskItemView.swift */,
+				A86DECB22A5BFBA200CC117C /* ListRowItemView.swift */,
 				A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */,
 				A87D57BF2A5A161300ABDB34 /* BlankView.swift */,
 			);
@@ -216,6 +219,7 @@
 				A87D57A02A56577600ABDB34 /* ContentView.swift in Sources */,
 				A87D57C02A5A161300ABDB34 /* BlankView.swift in Sources */,
 				A87D579E2A56577600ABDB34 /* OverManTodos.xcdatamodeld in Sources */,
+				A86DECB32A5BFBA200CC117C /* ListRowItemView.swift in Sources */,
 				A87D57BC2A5812EC00ABDB34 /* BackgroundImageView.swift in Sources */,
 				A87D57BA2A57E0E600ABDB34 /* Constant.swift in Sources */,
 				A87D57BE2A581A6600ABDB34 /* NewTaskItemView.swift in Sources */,
