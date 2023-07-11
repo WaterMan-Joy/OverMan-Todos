@@ -68,6 +68,7 @@ struct ContentView: View {
                             .font(.system(.largeTitle, design: .rounded))
                             .fontWeight(.heavy)
                             .padding(.leading, 4)
+                        
                         Spacer()
                         // edit button
                         EditButton()
@@ -84,26 +85,39 @@ struct ContentView: View {
                                 .frame(width: 24, height: 24)
                                 .font(.system(.title, design: .rounded))
                         })
+                        
+                        
                     }
                     .padding()
                     .foregroundColor(.white)
                     
-                    Spacer(minLength: 80)
+                    Spacer()
                     
-                    // new task button
-                    Button(action: {
-                        showNewTaskItem = true
-                    }, label: {
-                        Image(systemName: "plus.circle")
-                            .font(.system(size: 30, weight: .semibold, design: .rounded))
-                        Text("New Task")
-                            .font(.system(size: 24, weight: .bold, design: .rounded))
-                    })
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.pink, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(10)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0.0, y: 4.0)
+                    // current time
+                    HStack {
+                        
+                        // current time
+                        RemainTime()
+                        
+                        // new task button
+                        Button(action: {
+                            showNewTaskItem = true
+                            playSound(sound: "click-sound", type: "mp3")
+                            feedback.notificationOccurred(.success)
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 30, weight: .semibold, design: .rounded))
+                        })
+                        .foregroundColor(.pink)
+                        .padding()
+                        .padding(.vertical, 20)
+                        .background(isDarkMode ? .black : .white)
+                        .opacity(0.8)
+                        .cornerRadius(10)
+                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0.0, y: 4.0)
+                    }
+                    
+                    Spacer(minLength: 20)
                     
                     Spacer()
                     
@@ -114,21 +128,25 @@ struct ContentView: View {
                         }
                         .onDelete(perform: deleteItems)
                     }
-                    .opacity(0.9)
-                    .listStyle(PlainListStyle())
-                    .cornerRadius(10)
+                    .listStyle(.plain)
                     .frame(maxWidth: 640)
-                    
+                    .cornerRadius(10)
                     Spacer()
                 }
+                .blur(radius: showNewTaskItem ? 5.0 : 0, opaque: false)
+                .transition(.move(edge: .bottom))
+                .animation(.easeOut(duration: 0.5), value: 0)
                 .padding()
+                
                 
                 // new tasks item
                 if showNewTaskItem {
-                    BlankView()
+                    BlankView(backgroundColor: isDarkMode ? .black : .gray, backgroundOpacity: isDarkMode ? 0.3 : 0.5)
                         .onTapGesture() {
                             withAnimation() {
                                 showNewTaskItem = false
+                                playSound(sound: "click-sound", type: "mp3")
+                                feedback.notificationOccurred(.success)
                             }
                         }
                     NewTaskItemView(isShowing: $showNewTaskItem)
@@ -143,7 +161,11 @@ struct ContentView: View {
                 }
                 #endif
             }
-            .background(BackgroundImageView())
+            .background(
+                BackgroundImageView()
+//                    .blur(radius: showNewTaskItem ? 2.0 : 0, opaque: false)
+            )
+            
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

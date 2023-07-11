@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A86DECB32A5BFBA200CC117C /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DECB22A5BFBA200CC117C /* ListRowItemView.swift */; };
+		A86DECB52A5C007300CC117C /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DECB42A5C007300CC117C /* CheckBoxStyle.swift */; };
+		A86DECB72A5C05CD00CC117C /* RemainTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DECB62A5C05CD00CC117C /* RemainTime.swift */; };
+		A86DECB92A5CF8FA00CC117C /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DECB82A5CF8FA00CC117C /* SoundPlayer.swift */; };
+		A86DECC32A5D005100CC117C /* click-warning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A86DECC12A5D005100CC117C /* click-warning.mp3 */; };
+		A86DECC42A5D005100CC117C /* click-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A86DECC22A5D005100CC117C /* click-sound.mp3 */; };
 		A87D57992A56577600ABDB34 /* OverManTodosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D57982A56577600ABDB34 /* OverManTodosApp.swift */; };
 		A87D579B2A56577600ABDB34 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D579A2A56577600ABDB34 /* Persistence.swift */; };
 		A87D579E2A56577600ABDB34 /* OverManTodos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A87D579C2A56577600ABDB34 /* OverManTodos.xcdatamodeld */; };
@@ -23,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		A86DECB22A5BFBA200CC117C /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
+		A86DECB42A5C007300CC117C /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
+		A86DECB62A5C05CD00CC117C /* RemainTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainTime.swift; sourceTree = "<group>"; };
+		A86DECB82A5CF8FA00CC117C /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		A86DECC12A5D005100CC117C /* click-warning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "click-warning.mp3"; sourceTree = "<group>"; };
+		A86DECC22A5D005100CC117C /* click-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "click-sound.mp3"; sourceTree = "<group>"; };
 		A87D57952A56577600ABDB34 /* OverManTodos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OverManTodos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D57982A56577600ABDB34 /* OverManTodosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverManTodosApp.swift; sourceTree = "<group>"; };
 		A87D579A2A56577600ABDB34 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -95,6 +105,8 @@
 		A87D57AC2A56673300ABDB34 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				A86DECC12A5D005100CC117C /* click-warning.mp3 */,
+				A86DECC22A5D005100CC117C /* click-sound.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -111,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A87D57B92A57E0E600ABDB34 /* Constant.swift */,
+				A86DECB82A5CF8FA00CC117C /* SoundPlayer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -118,6 +131,7 @@
 		A87D57AF2A56675500ABDB34 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				A86DECB42A5C007300CC117C /* CheckBoxStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -130,6 +144,7 @@
 				A86DECB22A5BFBA200CC117C /* ListRowItemView.swift */,
 				A87D57BB2A5812EC00ABDB34 /* BackgroundImageView.swift */,
 				A87D57BF2A5A161300ABDB34 /* BlankView.swift */,
+				A86DECB62A5C05CD00CC117C /* RemainTime.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +216,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86DECC32A5D005100CC117C /* click-warning.mp3 in Resources */,
+				A86DECC42A5D005100CC117C /* click-sound.mp3 in Resources */,
 				A87D57A62A56577800ABDB34 /* Preview Assets.xcassets in Resources */,
 				A87D57A22A56577800ABDB34 /* Assets.xcassets in Resources */,
 			);
@@ -213,14 +230,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86DECB92A5CF8FA00CC117C /* SoundPlayer.swift in Sources */,
 				A87D57B82A57DA7D00ABDB34 /* HideKeyBoardExtension.swift in Sources */,
 				A87D57992A56577600ABDB34 /* OverManTodosApp.swift in Sources */,
 				A87D579B2A56577600ABDB34 /* Persistence.swift in Sources */,
 				A87D57A02A56577600ABDB34 /* ContentView.swift in Sources */,
 				A87D57C02A5A161300ABDB34 /* BlankView.swift in Sources */,
 				A87D579E2A56577600ABDB34 /* OverManTodos.xcdatamodeld in Sources */,
+				A86DECB72A5C05CD00CC117C /* RemainTime.swift in Sources */,
 				A86DECB32A5BFBA200CC117C /* ListRowItemView.swift in Sources */,
 				A87D57BC2A5812EC00ABDB34 /* BackgroundImageView.swift in Sources */,
+				A86DECB52A5C007300CC117C /* CheckBoxStyle.swift in Sources */,
 				A87D57BA2A57E0E600ABDB34 /* Constant.swift in Sources */,
 				A87D57BE2A581A6600ABDB34 /* NewTaskItemView.swift in Sources */,
 			);
