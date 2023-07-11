@@ -71,11 +71,11 @@ struct ContentView: View {
                         
                         Spacer()
                         // edit button
-                        EditButton()
-                            .font(.system(size: 16, weight: .semibold, design: .rounded))
-                            .padding(.horizontal, 10)
-                            .frame(minWidth: 70, minHeight: 24)
-                            .background(Capsule().stroke(Color.white, lineWidth: 2))
+//                        EditButton()
+//                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+//                            .padding(.horizontal, 10)
+//                            .frame(minWidth: 70, minHeight: 24)
+//                            .background(Capsule().stroke(Color.white, lineWidth: 2))
                         // apppearance button
                         Button(action: {
                             isDarkMode.toggle()

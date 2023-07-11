@@ -43,7 +43,7 @@ struct NewTaskItemView: View {
         VStack {
             Spacer()
             VStack {
-                TextField("NEW TASK", text: $task)
+                TextField("새로운 할일", text: $task)
                     .foregroundColor(.pink)
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .padding()
@@ -57,7 +57,7 @@ struct NewTaskItemView: View {
                     feedback.notificationOccurred(.success)
                 }, label: {
                     Spacer()
-                    Text("SAVE")
+                    Text("저장")
                         .font(.system(size: 24, weight: .bold, design: .rounded))
                     Spacer()
                 })
